@@ -1,0 +1,10 @@
+ 1.  <th>  <input type="checkbox" id="checkAll"></th>
+ 
+ 
+ 2.  <td><input type="checkbox" name="delete[]" value="{{ $cat->id }}"></td>
+ 
+ 
+ 3. 
+ $('#checkAll').click(function(){
+      $('input:checkbox').not(this).prop('checked', this.checked);
+ });
