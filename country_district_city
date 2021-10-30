@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamically Select Country and City </title>
+    <script type="text/javascript">
+              var
+     stateObject ={
+
+                   "Bangladesh": {
+                       "dhaka" : ["Narayangong", "Madaripur","Norshindi"],
+                       "chittagong" : ["laxmipur", "feni","chandpur"],
+                   },
+
+                   "India": {
+                       "delhi" : ["new delhi", "north delhi","south delhi"],
+                       "chittagong" : ["north goa ", "south goa"],
+                   },
+                   "Australia": {
+                       "Australiadelhi" : ["new Australia", "nAustralia delhi","sAustralia delhi"],
+                       "chittagongAustralia" : ["Australianorth goa ", "Australiasouth goa"],
+                   },
+    }
+     window.onload = function()
+     {
+                      var countrysel = document.getElementById("countrysel"),
+                      statesel = document.getElementById("statesel"),
+                      districtsel = document.getElementById("districtsel");
+
+                      for(var country in stateObject)
+                      {
+                          countrysel.options [countrysel.options.length] = new Option(country,country)
+                      }
+
+                      countrysel.onchange = function()
+                      {
+                          statesel.length =1;
+                          districtsel.length=1;
+
+                          if(this.selectedIndex <1)
+                          return;
+
+                          for(var state in stateObject[this.value])
+                          {
+                              statesel.options[statesel.options.length] = new Option(state,state)
+                          }
+                      }
+                      countrysel.onchange();
+
+                      statesel.onchange = function()
+                      {
+                          districtsel.length=1;
+                          if(this.selectedIndex < 1)
+                          return;
+
+                          var district = stateObject[countrysel.value][this.value];
+
+                           for(var i = 0 ; i < district.length; i++)
+                           {
+                               districtsel.options[districtsel.options.length] = new Option(district[i],
+                               district[i]);
+                           }
+                      }
+     }
+</script>
+</head>
+<body>
+    
+    <form action="#" name="myform" id="myform">
+        <select name="country" id="countrysel" size="1">
+
+            <option value=""selected> select Country</option>
+        </select>
+        <br><br>
+   <!-- select state -->
+        <select name="state" id="statesel" size="1">
+
+            <option value=""selected>Pleade  select Country first</option>
+        </select>
+      <!-- select district -->
+      <br><br>
+        <select name="district" id="districtsel" size="1">
+
+            <option value=""selected>Please  select state first</option>
+        </select>
+        <br>
+        <input type="submit" name="submit" id="#">
+    </form>
+
+
+
+</body>
+</html>
