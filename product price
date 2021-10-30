@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form>
+        <div>
+            <label >Product Price</label>
+            <input type="text" name="product" id="product" oninput="myfunction()">
+        </div>
+
+        <div>
+            <label >GST</label>
+            <input type="number" name="gst" id="gst" oninput="myfunction()">
+        </div>
+
+        <div>
+            <label >Delivery Cost</label>
+            <input type="number" name="delivery" id="delivery" oninput="myfunction()">
+        </div>
+     <hr>
+            <h4>Total Price <span id="totalPrice"> 0 </span></h4>
+    </form>
+    <script type="text/javascript">
+
+          function myfunction()
+          {
+          
+             var price = document.getElementById('product').value;
+             var gst = document.getElementById('gst').value;
+             var delivery = document.getElementById('delivery').value;
+             var total = +price+ +gst+ +delivery;
+             document.getElementById('totalPrice').innerHTML=total;
+          }
+
+
+
+
+    </script>
+</body>
+</html>
