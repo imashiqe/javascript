@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Passing In Window </title>
+
+    <script type="text/javascript">
+          function dyn_window()
+          {
+              var title = "My title";
+              var name  = document.f.txtName.value;
+              var address = document.f.txtAddress.value; 
+              var course  = document.f.txtCourse.value;
+              var gender = "";
+              var subject = "";
+            //   gender
+              for(i=0; i<document.f.rdgender.length; i++)
+              {
+                  if(document.f.rdgender[i].checked)
+                  {
+                      gender = document.f.rdgender[i].value;
+                  }
+              }
+        //   subject
+               for(j = 0; j<document.f.chksubject.length; j++)
+               {
+                   if(document.f.chksubject[j].checked)
+                   {
+                       subject+=document.f.chksubject[j].value+", ";
+                   }
+               }
+
+               a=open('','','width=850, height=450')
+
+               with(a.document)
+               {
+                   write("<html>");
+                   write("<head><title>"+title+"</title></head>");
+                   write("<body>");
+                   write("<div style='border: 1px solid gray'>Name:"+name+"<br><img src='image/thomas.jpg' width='50' height='50'><br>");
+                   write("Address:"+address+"<br>");
+                   write("Course:"+course+"<br>")
+                   write("subject:"+subject+"<br>");
+                   write("<input type='button' value='Close' onClick='self.close();'  />");
+                   write("<input type='button' value='Print' onClick='self.print();' />");
+                   write("</body>");
+                   write("</html>");
+               }
+          }
+
+    </script>
+</head>
+<body>
+    
+          <form action="#" method="POST" name="f" style="width: 200px; margin: 0px auto; border: 1px solid gray; padding: 10px;"> 
+                  
+              <div>
+                  Name<br>
+                  <input type="text" name="txtName">
+              </div>
+
+              <div>
+                  course<br>
+                  <select name="txtCourse" >
+                      <option value="MBA">M.B.A</option>
+                      <option value="BBA">B.B.A</option>
+                      <option value="CSE">C.S.E</option>
+                      <option value="EEE">E.E.E</option>
+                  </select>
+              </div>
+           
+              
+             <div>
+                 Gender<br>
+                 Male<input type="radio" name="rdgender" value="Male">
+                 Female<input type="radio" name="rdgender" value="Female">
+             </div>
+            
+              <div>
+                  Address<br>
+                  <textarea name="txtAddress" id="" cols="30" rows="10"></textarea>
+              </div>
+             <div>
+                 Subject<br>
+                 English<input type="checkbox" name="chksubject" value="English">
+                 Bangla<input type="checkbox" name="chksubject" value="Bangla">
+             </div>
+
+             <div>
+                  <input type="button" name="btnObject" value="Submit" onclick="dyn_window()">
+             </div>
+
+          </form>
+
+</body>
+</html>
