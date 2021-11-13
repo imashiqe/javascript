@@ -1,0 +1,9 @@
+const navToggole = document.querySelector(".nav-toggle");
+const links = document.querySelector(".links");
+
+navToggole.addEventListener("click", function()
+{
+
+
+	links.classList.toggle("show-links");
+});
