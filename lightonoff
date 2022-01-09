@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                .wrapper{
+ width: 100%;
+ height: 1000px;
+ margin: 0 auto;
+ background: #042755;
+ text-align: center;
+}
+h2{
+    font-size: 50px;
+    color: aliceblue;
+}
+
+button{
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+p{
+    font-size: 60px;
+    color: azure;
+}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Light On OFF</h2>
+       
+        <button onclick="document.getElementById('myImage').src='img/lighton.png'">Turn On The Light</button>
+        
+        <img id="myImage" src="img/lightoff.png" style="width: 250px;">
+
+        <button onclick="document.getElementById('myImage').src='img/lightoff.png'">Turn Off The Light</button>
+    </div>
+    
+    
+
+</body>
+</html>
