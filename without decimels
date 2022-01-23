@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syntex</title>
+</head>
+<body>
+    <p id="um"></p>
+    <script>
+        // create
+        var x;
+        let y;
+    //    use
+     x =5;
+     y= 6;
+     let z = x + y;
+     document.getElementById("um").innerHTML =z;
+    </script>
+
+    <p>Number can be written with o without decimels</p>
+
+    <p id="demo"></p>
+
+    <script>
+        document.getElementById("demo").innerHTML = 10.50;
+
+    </script>
+
+    <p id="jhon"></p>
+    <script>
+        document.getElementById("jhon").innerHTML = "John" + " " + "Doe";
+    </script>
+</body>
+</html>
